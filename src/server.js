@@ -11,15 +11,15 @@ server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 server.use(jsonServer.defaults());
 
-server.use('/public', publicRoutes) //rotas na porta 8000
+server.use('/public', publicRoutes)
 
 
 server.use(/^(?!\/(public|livros|autores|categorias)).*$/, authenticationMiddleware);
 
-server.use(router) //rotas na prota 3000
+server.use(router)
 
 server.listen(PORT, () => {
-  console.log("API disponível em http://localhost:3001")
+  console.log("API está disponível na url http://localhost:3001")
 })
 
 
